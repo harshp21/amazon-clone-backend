@@ -7,7 +7,6 @@ import cors from 'cors';
 import userRoute from './routes/user/user-route';
 import productRoute from './routes/product/product-route';
 import cartRoute from './routes/cart/cart-route';
-import bookRoute from './routes/book/book-route';
 import paymentRoute from './routes/payment/payment-route';
 import orderRoute from './routes/order/order-route';
 
@@ -27,7 +26,6 @@ app.use(cors({
 app.use('/user', userRoute);
 app.use('/products', productRoute);
 app.use('/cart', cartRoute);
-app.use('/book', bookRoute);
 app.use('/payment', paymentRoute);
 app.use('/orders', orderRoute);
 

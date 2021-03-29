@@ -12,7 +12,6 @@ var cors_1 = __importDefault(require("cors"));
 var user_route_1 = __importDefault(require("./routes/user/user-route"));
 var product_route_1 = __importDefault(require("./routes/product/product-route"));
 var cart_route_1 = __importDefault(require("./routes/cart/cart-route"));
-var book_route_1 = __importDefault(require("./routes/book/book-route"));
 var payment_route_1 = __importDefault(require("./routes/payment/payment-route"));
 var order_route_1 = __importDefault(require("./routes/order/order-route"));
 // app config
@@ -29,7 +28,6 @@ app.use(cors_1.default({
 app.use('/user', user_route_1.default);
 app.use('/products', product_route_1.default);
 app.use('/cart', cart_route_1.default);
-app.use('/book', book_route_1.default);
 app.use('/payment', payment_route_1.default);
 app.use('/orders', order_route_1.default);
 // db config
