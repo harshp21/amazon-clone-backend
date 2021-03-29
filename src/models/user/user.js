@@ -1,0 +1,39 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.User = void 0;
+var mongoose_1 = __importDefault(require("mongoose"));
+var validator_1 = __importDefault(require("validator"));
+var userSchema = new mongoose_1.default.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
+    emailId: {
+        type: String,
+        required: true,
+        unique: true,
+        validate: {
+            validator: function (value) {
+                return validator_1.default.isEmail(value);
+            }
+        }
+    },
+    address: String,
+    password: {
+        type: String,
+        required: true,
+    },
+    isActive: {
+        type: Boolean,
+        default: false,
+    },
+    resetPasswordToken: String,
+    resetPasswordTokenExpiry: Number,
+    activateAccountToken: String,
+    activateAccountTokenExpiry: Number,
+});
+var User = mongoose_1.default.model('User', userSchema);
+exports.User = User;
